@@ -7,6 +7,7 @@
         <link rel = "icon" href ="{{ asset('img/logo GMF.png') }}" 
         type = "image/x-icon">
         <link href="/css/app.css" rel="stylesheet">
+        
     </head>
     <body>
         @section('sidebar')

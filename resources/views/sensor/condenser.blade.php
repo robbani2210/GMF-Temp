@@ -4,7 +4,7 @@
  
 @section('content')
     <div class="bg-[#F8F8F8] h-screen">
-        <div class="flex justify-between items-center py-4 px-6 bg-white border border-gray-200 rounded-lg shadow m-6 md:mx-12">
+        <div class="flex justify-between items-center py-4 px-6 bg-white border border-gray-200 rounded-lg shadow m-6 md:mx-10">
             <nav class="flex" aria-label="Breadcrumb">
                 <ol class="inline-flex items-center space-x-1 md:space-x-3">
                     <li class="inline-flex items-center">
@@ -28,7 +28,7 @@
             </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6 md:mx-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6 md:mx-10">
             <div class="bg-white border border-gray-200 rounded-lg shadow md:mb-8 p-6">
                 <h1 class="text-lg text-[#625F6E]">Device 1</h1>
                 <img src="{{ asset('img/image 1.png') }}" class="mt-8" />
