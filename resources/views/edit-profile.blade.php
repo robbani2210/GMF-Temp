@@ -26,6 +26,7 @@
                 <button type="cancel" class="focus:outline-none text-white bg-[#625F6E] hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900 float-right">Cancel</button>
                 <button type="submit" class="focus:outline-none text-white bg-[#006298] hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900 float-right">Submit</button>
             </form>
+            <br>
             <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
             <h1 class="text-xl text-[#625F6E]">Your Password</h1>
             <form>
