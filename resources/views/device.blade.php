@@ -35,9 +35,9 @@
                 <table class="w-full text-sm text-left text-gray-500">
                     <thead class="text-xs text-center text-gray-700 uppercase bg-gray-200">
                         <tr>
-                            <th scope="col" class="p-4">
+                            {{-- <th scope="col" class="p-4">
                                 No
-                            </th>
+                            </th> --}}
                             <th scope="col" class="p-4">
                                 Timestamp
                             </th>
@@ -56,31 +56,29 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @php
+                        {{-- @php
                             $i = 1;
-                        @endphp 
+                        @endphp  --}}
 
                         @foreach ($data as $item)
                             <tr class="bg-white border-b hover:bg-gray-50">
-                                <td class="p-4">
+                                {{-- <td class="px-4 py-2">
                                     {{ $i++ }}
+                                </td> --}}
+                                <td class="px-4 py-2">
+                                    {{ $item['timestamp'] }}
                                 </td>
-                                <td class="p-4">
-                                    {{ $item->timestamp }}
-                                </td>
-                                <td class="p-4">
+                                <td class="px-4 py-2">
                                     Silver
                                 </td>
-                                <td class="p-4 break-all">
+                                <td class="px-4 py-2 break-all">
                                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga enim officiis odio aliquid illo eos!
                                 </td>
-                                <td class="bg-green-600 text-white text-center p-4">
+                                <td class="bg-green-600 text-white text-center px-4 py-2">
                                     Complete
                                 </td>
-
-
-                                <td class="py-4 px-2 flex justify-evenly">
-                                    <a data-modal-target="#editnote-modal{{ $item->timestamp }}" data-modal-toggle="#editnote-modal{{ $item->timestamp }}" class="ph-bold ph-pencil-simple p-1.5 font-medium text-lg text-blue-600 hover:bg-blue-600 hover:text-white hover:rounded-full hover:cursor-pointer">
+                                <td class="p-2 flex justify-evenly">
+                                    <a data-modal-target="#editnote-modal{{ $item['timestamp'] }}" data-modal-toggle="#editnote-modal{{ $item['timestamp'] }}" class="ph-bold ph-pencil-simple p-1.5 font-medium text-lg text-blue-600 hover:bg-blue-600 hover:text-white hover:rounded-full hover:cursor-pointer">
                                     </a>
                                     @include('modal.edit-note')
 
@@ -88,19 +86,19 @@
                                     </a>
                                     @include('modal.delete-note')
                                 </td>
-                            </tr>
+                            </tr>                            
                         @endforeach
                     </tbody>
                 </table>
             </div>
-
+            
             <nav class="md:flex justify-between items-center mt-4" aria-label="Table navigation">
-                <span class="text-sm font-normal text-gray-500">Showing <span class="font-semibold text-gray-900">1-10</span> of <span class="font-semibold text-gray-900">1000</span></span>
+                <span class="text-sm font-normal text-gray-500">Showing <span class="font-semibold text-gray-900">{{ $data[0]['timestamp'] }}-{{ end($data)['timestamp'] }}</span> of <span class="font-semibold text-gray-900">1000</span></span>
                 <ul class="inline-flex -space-x-px text-sm h-8 mt-4 md:mt-0">
-                    <li>
-                        <a href="#" class="flex items-center justify-center px-2 md:px-3 h-8 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700">Previous</a>
-                    </li>
-                    <li>
+                    @if ($prevStartKey)
+                        <a href="{{ route('device', ['prev_key' => $prevStartKey]) }}" class="flex items-center justify-center px-2 md:px-3 h-8 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700">Previous</a>
+                    @endif
+                    {{-- <li>
                         <a href="#" class="flex items-center justify-center px-2 md:px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700">1</a>
                     </li>
                     <li>
@@ -114,12 +112,10 @@
                     </li>
                     <li>
                         <a href="#" class="flex items-center justify-center px-2 md:px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700">5</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('device') }}?{{ $queryString }}" class="flex items-center justify-center px-2 md:px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700">Next</a>
-
-                    </li>
-                    
+                    </li> --}}
+                    @if ($lastEvaluatedKey)
+                        <a href="{{ route('device', ['start_key' => json_encode($lastEvaluatedKey)]) }}" class="flex items-center justify-center px-2 md:px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700">Next</a>
+                    @endif
                 </ul>
             </nav>
         </div>

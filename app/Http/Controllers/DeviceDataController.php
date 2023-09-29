@@ -21,13 +21,33 @@ class DeviceDataController extends Controller
     }
 
     function device_details(Request $request){
-        $data = device_data::limit(5)->scan();
-        
-        $nextPage = $data->first()->meta()['LastEvaluatedKey']; // array
-    
-        // Convert the array to a query string
-        $queryString = http_build_query($nextPage);
-        
-        return view('device', compact('data', 'queryString'));
+        $limit = 5;
+        $startKey = $request->query('start_key');
+        $prevKey = $request->query('prev_key'); 
+
+        $queryBuilder = DB::table('device_data')->limit($limit);
+
+        if ($startKey) {
+            $queryBuilder->exclusiveStartKey(json_decode($startKey, true, 512, JSON_THROW_ON_ERROR));
+        } elseif ($prevKey) {
+            $queryBuilder->exclusiveStartKey(json_decode($prevKey, true, 512, JSON_THROW_ON_ERROR));
+        }
+
+        $response = $queryBuilder->scan();
+        $data = $response['Items'];
+
+        $lastEvaluatedKey = $response['LastEvaluatedKey'] ?? null;
+
+        $prevStartKey = null;
+        if ($startKey) {
+            $prevStartKey = $startKey;
+        } elseif ($prevKey) {
+            $prevStartKey = $prevKey; 
+        }
+
+        return view('device', compact('data', 'lastEvaluatedKey', 'prevStartKey'));
+
     }    
+
+    
 }
