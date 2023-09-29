@@ -20,7 +20,7 @@ use App\Http\Controllers\DeviceDataController;
 
 Route::view('/about', 'about');
 Route::view('/admin', 'admin');
-Route::view('/login', 'auth.login');
+Route::view('/login', 'login');
 Route::view('/register', 'auth.register');
 Route::get('/device', [DeviceDataController::class, 'device_details'])->name('device');
 Route::post('/edit-note/{id}',[NotesController::class,'update'])->name('notes.edit');
