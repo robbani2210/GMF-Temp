@@ -24,7 +24,7 @@ Route::view('/login', 'auth.login');
 Route::view('/register', 'auth.register');
 Route::get('/device', [DeviceDataController::class, 'device_details'])->name('device');
 Route::post('/edit-note/{id}',[NotesController::class,'update'])->name('notes.edit');
-Route::view('/edit-profile', 'profile');
+Route::view('/edit-profile', 'edit-profile');
 
 // Sensor
 Route::view('/temperature-chilled-water', 'sensor.chilled-water');
