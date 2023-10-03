@@ -10,6 +10,7 @@
         
     </head>
     <body>
+        <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
         @section('sidebar')
           @include('layouts.sidebar')
         @show
@@ -21,5 +22,7 @@
         </div>
 
         <script src="/js/app.js"></script>
+        <script src="/js/bar.js"></script>
+        {{-- <script src="/js/line.js"></script> --}}
     </body>
 </html>

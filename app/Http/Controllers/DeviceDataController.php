@@ -11,14 +11,27 @@ use Illuminate\View\View;
 class DeviceDataController extends Controller
 {
     function show_dashboard(){
-        $result = device_data::all();
+        $results = device_data::all();
+        $data = [];
+    
+        foreach ($results as $result) {
+            $data[] = [
+                "timestamp" => date('d-m-Y', $result->payload['timestamp']),
+                "temperature" => round($result->payload['temperature'],2),
+                "humidity" => $result->payload['humidity'],
+            ];
+        }
 
-        $data = [
-            "device_data" => $result
-        ];
         
+        usort($data, function($a, $b){
+            if ($a['timestamp'] == $b['timestamp']) {
+                return 0;
+            }
+            return ($a['timestamp'] < $b['timestamp']) ? -1 : 1;
+        });
         return view('dashboard', compact('data'));
     }
+    
 
     function device_details(Request $request){
         $limit = 5;

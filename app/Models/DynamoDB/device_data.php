@@ -8,5 +8,6 @@ class device_data extends Model
 {
     protected $table = 'device_data';
     protected $primaryKey = 'timestamp';
+    protected $sortKey = 'timestamp';
 }
 

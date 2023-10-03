@@ -1250,6 +1250,12 @@ input:checked + .toggle-bg {
 .w-full {
   width: 100%;
 }
+.w-\[250px\] {
+  width: 250px;
+}
+.w-\[240px\] {
+  width: 240px;
+}
 .max-w-6xl {
   max-width: 72rem;
 }
@@ -1814,6 +1820,11 @@ input:checked + .toggle-bg {
         -ms-overflow-style: none;  /* IE and Edge */
         scrollbar-width: none;  /* Firefox */
     }
+
+#chart {
+  max-width: 650px;
+  margin: 35px auto;
+}
 
 * {
   margin: 0;
