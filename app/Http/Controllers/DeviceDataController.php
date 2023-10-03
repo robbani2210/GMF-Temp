@@ -11,12 +11,12 @@ use Illuminate\View\View;
 class DeviceDataController extends Controller
 {
     function show_dashboard(){
-        $result = device_data::limit(5)->scan();
+        $result = device_data::all();
 
         $data = [
             "device_data" => $result
         ];
-
+        
         return view('dashboard', compact('data'));
     }
 

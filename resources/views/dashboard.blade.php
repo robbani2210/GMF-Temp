@@ -13,14 +13,14 @@
         </div>
      
         <div class="flex flex-col md:flex-row justify-around items-center space-y-4 md:space-y-0 m-6 md:mx-10">
-            <button><i class="ph-light ph-caret-left text-3xl text-[#625F6E]"></i></button>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 m-6 md:m-0">
+            <button onclick="document.getElementById('SensorList').scrollLeft -= 224"><i class="ph-light ph-caret-left text-3xl text-[#625F6E]"></i></button>
+            <div id="SensorList" class="mt-4 mx-4 grid gap-6 w-full grid-flow-col overflow-auto no-scrollbar py-2">
                 @php
                     $i = 1;
                 @endphp
                 
                 @foreach ($data['device_data'] as $item)
-                    <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow">
+                    <div class="w-[200px] p-6 bg-white border border-gray-200 rounded-lg shadow">
                         <div class="flex justify-between items-center">
                             <h1 class="text-lg text-[#625F6E]">Sensor {{ $i++; }}</h1>
                             @if ($item->payload['temperature'] < 30)
@@ -45,7 +45,7 @@
     
             </div>
 
-            <button><i class="ph-light ph-caret-right text-3xl text-[#625F6E]"></i></button>
+            <button onclick="document.getElementById('SensorList').scrollLeft += 224"><i class="ph-light ph-caret-right text-3xl text-[#625F6E]"></i></button>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 m-6 md:mx-10">
