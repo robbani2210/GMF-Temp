@@ -16,6 +16,8 @@
             <div class="bg-white border border-gray-200 rounded-lg shadow md:mb-8 p-6"> 
             <h1 class="text-xl text-[#625F6E]">Unpad x GMF AeroAsia Monitoring Site</h1>
             <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
+            <img src="{{ asset('img/logo unpad x gmf.png') }}" class="h-20 mx-auto" />
+            <br>
             <h1 class="text-xl text-[#625F6E]">Apa itu Unpad x GMF AeroAsia Monitoring Site?</h1>
             <p class="text-m text-[#625F6E]">Situs ini adalah suatu hasil program kerjasama antara Universitas Padjadjaran (Unpad) dengan Garuda Maintenance Facility (GMF) AeroAsia. Situs ini dapat menampilkan data atau informasi mengenai sensor dan perangkat yang tersedia kepada penggunanya.</p>
             <br>
