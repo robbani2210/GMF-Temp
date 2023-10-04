@@ -40,6 +40,13 @@
                 <li>Hitachi-2 / Chiller-2</li>
             </ol>
             <br>
+            <h1 class="text-xl text-[#625F6E]">Siapa yang dapat dihubungi?</h1>
+            <ul class="text-m text-[#625F6E] pl-5 mt-2 space-y-1 list-disc list-inside">
+                <li>Ananda Shaquille Farell | +62 812-8985-6576</li>
+                <li>Ilham Robbani | +62 878-4430-5766</li>
+                <li>Rafa Azka Ulinnuha | +62 813-9509-8452</li>
+            </ul>
+            <br>
             <!-- <button type="button" onclick="window.location.href = '/edit-profile';" class="focus:outline-none text-white bg-[#006298] hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900 float-right">Change Profile</button> -->
         </div>
     </div>
