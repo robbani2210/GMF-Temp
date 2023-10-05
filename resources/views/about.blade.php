@@ -7,8 +7,9 @@
         <div class="flex justify-between items-center py-4 px-6 bg-white border border-gray-200 rounded-lg shadow m-6 md:mx-10">
             <h1 class="md:text-xl text-[#625F6E]">About and FAQs</h1>
             <div class="space-x-4">
-                <i class="ph-light ph-chat-circle text-xl md:text-3xl text-[#625F6E]"></i>
-                <i class="ph-light ph-user-circle text-xl md:text-3xl text-[#625F6E]"></i>
+                <!-- <i class="ph-light ph-chat-circle text-xl md:text-3xl text-[#625F6E]"></i> -->
+                <!-- <i class="ph-light ph-user-circle text-xl md:text-3xl text-[#625F6E]"></i> -->
+                <button type="button" onclick="window.location.href = '/profile';" class="ph-light ph-user-circle text-xl md:text-3xl text-[#625F6E]"></button>
             </div>
         </div>
 
