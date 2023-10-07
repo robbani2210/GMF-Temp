@@ -16,8 +16,8 @@ dataLabels: {
   enabled: false
 },
 xaxis: {
-  categories: ['South Korea', 'Canada', 'United Kingdom', 'Netherlands', 'Italy', 'France', 'Japan',
-    'United States', 'China', 'Germany'
+  categories: ['Sensor 1', 'Sensor 2', 'Sensor 3', 'Sensor 4', 'Sensor 5', 'Sensor 6', 'Sensor 7',
+    'Sensor 8', 'Sensor 9', 'Sensor 10'
   ],
 }
 };

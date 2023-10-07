@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DeviceDataController;
+use App\Http\Controllers\LogSheetController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,4 +39,5 @@ Route::view('/oil-pressure', 'sensor.oil-pressure');
 Route::view('/vane-position', 'sensor.vane-position');
 Route::view('/main-motor-current', 'sensor.main-motor-current');
 
-Route::get('/', [DeviceDataController::class, 'show_dashboard']);
+Route::get('/', [LogSheetController::class, 'show']);
+Route::get('/dashboard_test', [LogSheetController::class, 'show']);

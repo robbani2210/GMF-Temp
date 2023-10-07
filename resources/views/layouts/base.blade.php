@@ -15,14 +15,18 @@
           @include('layouts.sidebar')
         @show
 
-        <div class="flex flex-col">
-            <div class="md:ml-48">
+        
+        <div class="bg-[#006298] flex flex-col">
+            <div class="md:ml-52">
+                @section('navbar')
+                  @include('layouts.navbar')
+                @show
                 @yield('content')
             </div>
         </div>
 
         <script src="/js/app.js"></script>
-        <script src="/js/bar.js"></script>
+        {{-- <script src="/js/bar.js"></script> --}}
         {{-- <script src="/js/line.js"></script> --}}
     </body>
 </html>
