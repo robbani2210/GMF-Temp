@@ -1,6 +1,11 @@
 @extends('layouts.base')
+
+@php
+    $name = 'Dashboard'
+@endphp
  
-@section('title', 'Dashboard')
+@section('title', $name)
+@section('header', $name)
  
 @section('content')    
     <div class="m-6 md:mx-10">

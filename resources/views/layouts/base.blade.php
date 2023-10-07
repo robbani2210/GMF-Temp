@@ -9,24 +9,22 @@
         <link href="/css/app.css" rel="stylesheet">
         
     </head>
-    <body>
+    <body class="bg-[#006298] h-screen">
         <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
         @section('sidebar')
           @include('layouts.sidebar')
         @show
-
         
-        <div class="bg-[#006298] flex flex-col">
-            <div class="md:ml-52">
-                @section('navbar')
-                  @include('layouts.navbar')
-                @show
-                @yield('content')
+        <div class="md:ml-52">
+            <div class="flex justify-between items-center py-4 px-6 bg-white border border-gray-200 rounded-lg shadow m-6 md:mx-10">
+                <h1 class="md:text-xl text-[#625F6E]">@yield('header')</h1>
+                <a href="{{ url('/profile')}}">
+                    <i class="ph-light ph-user-circle text-xl md:text-3xl text-[#625F6E]"></i>
+                </a>
             </div>
+            @yield('content')
         </div>
 
         <script src="/js/app.js"></script>
-        {{-- <script src="/js/bar.js"></script> --}}
-        {{-- <script src="/js/line.js"></script> --}}
     </body>
 </html>

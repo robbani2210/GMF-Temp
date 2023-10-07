@@ -24,7 +24,7 @@ Route::view('/admin', 'admin');
 Route::view('/login', 'login');
 Route::view('/register', 'auth.register');
 Route::get('/device', [DeviceDataController::class, 'device_details'])->name('device');
-Route::post('/edit-note/{id}',[NotesController::class,'update'])->name('notes.edit');
+Route::post('/edit-note/{id}', [NotesController::class,'update'])->name('notes.edit');
 Route::view('/edit-profile', 'edit-profile');
 Route::view('/profile', 'profile');
 
@@ -40,4 +40,3 @@ Route::view('/vane-position', 'sensor.vane-position');
 Route::view('/main-motor-current', 'sensor.main-motor-current');
 
 Route::get('/', [LogSheetController::class, 'show']);
-Route::get('/dashboard_test', [LogSheetController::class, 'show']);
