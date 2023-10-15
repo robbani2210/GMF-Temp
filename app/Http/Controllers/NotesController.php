@@ -7,6 +7,7 @@ use App\Models\DynamoDB\device_data;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB;
 
 class NotesController extends Controller
 {
@@ -18,14 +19,13 @@ class NotesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $timestamp)
-    {
-        DB::table('device_data')
-            ->key([
-                'timestamp' => $timestamp,
-            ])->updateItem([
-                'catatan' => $request->input('catatan'), 
-            ]);
+{
+    DB::connection('dynamodb')->table('device_data')
+        ->where('timestamp', $timestamp)
+        ->update([
+            'catatan' => $request->input('catatan'), 
+        ]);
 
-        return redirect()->back()->with('update', 'Product updated successfully');
-    }
+    return redirect()->back()->with('update', 'Product updated successfully');
+}
 }

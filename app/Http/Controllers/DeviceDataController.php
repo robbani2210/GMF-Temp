@@ -38,7 +38,7 @@ class DeviceDataController extends Controller
         $startKey = $request->query('start_key');
         $prevKey = $request->query('prev_key'); 
 
-        $queryBuilder = DB::table('device_data')->limit($limit);
+        $queryBuilder = DB::connection('dynamodb')->table('device_data')->limit($limit);
 
         if ($startKey) {
             $queryBuilder->exclusiveStartKey(json_decode($startKey, true, 512, JSON_THROW_ON_ERROR));

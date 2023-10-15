@@ -6,7 +6,7 @@
  
 @section('title', $name)
 @section('header', $name)
- 
+
 @section('content')
     <div class="grid grid-cols-1 md:grid-cols-1 gap-4 m-6 md:mx-10">
         <div class="bg-white border border-gray-200 rounded-lg shadow md:mb-8 p-6"> 

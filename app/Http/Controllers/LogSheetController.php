@@ -11,7 +11,7 @@ use Illuminate\View\View;
 class LogSheetController extends Controller
 {
     function show(){
-        $results = DB::table('logsheet')->limit(1)->scan();
+        $results = DB::connection('dynamodb')->table('logsheet')->limit(1)->scan();
 
         foreach ($results['Items'] as $result) {
             $timestamp = $result['Timestamp'];
